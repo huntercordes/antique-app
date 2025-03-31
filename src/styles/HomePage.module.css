@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("/assets/background.jpg") no-repeat center center/cover;
+  }
+  
+  .startButton {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background: #8b0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .startButton:hover {
+    background: #a00000;
+  }
+  
+  .video {
+    width: 80%;
+    max-width: 800px;
+  }
+  
