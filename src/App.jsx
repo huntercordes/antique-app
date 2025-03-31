@@ -4,7 +4,7 @@ import WeaponSelection from "./pages/WeaponSelectionPage"; // Placeholder for ne
 
 function App() {
   return (
-    <Router>
+    <Router basename="/antique-app">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/weapons" element={<WeaponSelection />} />
