@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/ArmorSelectionPage.module.css";
 import armor from "../data/armor";
@@ -9,31 +8,43 @@ const ArmorSelectionPage = ({ selectedWeapon, setSelectedArmor }) => {
 
   const handleArmorSelect = (armor) => {
     setSelectedArmor(armor);
-  
+
+    // Check if the selected weapon and armor form a winning combination
     if (isWinningCombination(selectedWeapon, armor)) {
-      navigate("/text-scene/win"); // Show win text before win cutscene
+      navigate("/win-one-cutscene"); // Navigate to the WinOneCutScene
     } else {
-      navigate("/text-scene/lose"); // Show lose text before lose cutscene
+      navigate("/lose-cutscene"); // Navigate to the LoseCutScene
     }
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL}/assets/images/marbletexture.jpg)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <h1 className={styles.title}>Choose Your Armor</h1>
       <div className={styles.grid}>
         {armor.map((armorItem) => (
-          <ArmorCard key={armorItem.id} armor={armorItem} onSelect={handleArmorSelect} />
+          <ArmorCard
+            key={armorItem.id}
+            armor={armorItem}
+            onSelect={handleArmorSelect}
+          />
         ))}
       </div>
     </div>
   );
 };
 
-// ✅ Define the function inside this file
+// Function to determine if the selected weapon and armor form a winning combination
 const isWinningCombination = (weapon, armor) => {
   if (!weapon || !armor) return false;
 
-  // Define the single correct weapon & armor combination
+  // Define the winning combination
   const winningCombination = { weapon: "Pugio", armor: "Manicae" };
 
   return weapon.name === winningCombination.weapon && armor.name === winningCombination.armor;

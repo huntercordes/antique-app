@@ -9,11 +9,16 @@ const WeaponSelectionPage = ({ setSelectedWeapon }) => {
 
   const handleWeaponSelect = (weapon) => {
     setSelectedWeapon(weapon); // Store the selected weapon
-    navigate("/armor"); // Move to armor selection
+    navigate("/armor"); // Proceed to armor selection
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container}
+    style={{
+      backgroundImage: `url(${process.env.PUBLIC_URL}/assets/images/marbletexture.jpg)`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}>
       <h1 className={styles.title}>Choose Your Weapon</h1>
       <div className={styles.grid}>
         {weapons.map((weapon) => (

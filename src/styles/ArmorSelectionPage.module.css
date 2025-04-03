@@ -1,41 +1,33 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: white;
-  }
-  
-  .title {
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    color: #8b0000;
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  .nextButton {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #8b0000;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .nextButton:hover {
-    background-color: #a00000;
-  }
-  
-  .nextButton:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.title {
+  font-family: "Cinzel", serif;
+  font-size: 2.2rem;
+  color: #d4af37; /* Gold */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  border-bottom: 3px solid #8b0000; /* Roman red border */
+  padding-bottom: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto; /* Center the grid */
+  padding: 10px;
+  overflow: hidden; /* Prevent scrolling */
+}

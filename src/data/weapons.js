@@ -15,7 +15,7 @@ const weapons = [
       id: 3, 
       image: `${process.env.PUBLIC_URL}/assets/images/trident.png`, 
       name: "Trident", 
-      description: "Long, three-pronged trident used for stabbing. Best against those with heavy armor."
+      description: "Long, three-pronged trident used for stabbing. Best against Scutum."
     },
     { 
       id: 4, 

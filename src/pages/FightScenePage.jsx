@@ -5,30 +5,50 @@ import styles from "../styles/FightScenePage.module.css";
 const FightScenePage = ({ selectedWeapon, selectedArmor }) => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const videoDuration = 5000; // Adjust based on the fight scene video length
+  const handleVideoEnd = () => {
+    // Check if the player won or lost
+    const isWinning = isWinningCombination(selectedWeapon, selectedArmor);
+    console.log("Is Winning Combination:", isWinning);
 
-    setTimeout(() => {
-      const isWinning = isWinningCombination(selectedWeapon, selectedArmor);
-      const outcome = isWinning ? "win" : "lose";
-      navigate(`/text-scene/${outcome}`);
-    }, videoDuration);
-  }, [navigate, selectedWeapon, selectedArmor]);
+    if (isWinning) {
+      navigate("/text-scene/win"); // Navigate to the win scene
+    } else {
+      navigate("/text-scene/lose"); // Navigate to the lose scene
+    }
+  };
+
+  useEffect(() => {
+    // Ensure that the video onEnded event is set up correctly
+    const video = document.getElementById("fight-video");
+    video.addEventListener("ended", handleVideoEnd);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      video.removeEventListener("ended", handleVideoEnd);
+    };
+  }, [selectedWeapon, selectedArmor, navigate]);
 
   return (
     <div className={styles.container}>
-      <video className={styles.video} autoPlay>
-        <source src="/assets/videos/fight-scene.mp4" type="video/mp4" />
+      <video
+        id="fight-video"
+        className={styles.video}
+        autoPlay
+        controls={false}
+      >
+        <source src="/assets/videos/fightscene.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
   );
 };
 
-// ✅ Define isWinningCombination inside this file if needed
+// ✅ Winning combination for the first round
 const isWinningCombination = (weapon, armor) => {
   if (!weapon || !armor) return false;
-  const winningCombination = { weapon: "Pugio", armor: "Manicae" };
+
+  const winningCombination = { weapon: "Pugio", armor: "Manicae" }; // First round win
+
   return weapon.name === winningCombination.weapon && armor.name === winningCombination.armor;
 };
 
