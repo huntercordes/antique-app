@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: white;
+  }
+  
+  .title {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #8b0000;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .nextButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nextButton:hover {
+    background-color: #a00000;
+  }
+  
+  .nextButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

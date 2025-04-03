@@ -1,0 +1,17 @@
+/* FightScenePage.module.css */
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Ensure nothing overflows the container */
+  }
+  
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make sure the video covers the entire screen */
+  }
+  
