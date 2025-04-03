@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/antique-app/static/css/main.ecfc67da.css",
-    "main.js": "/antique-app/static/js/main.4c8f3327.js",
+    "main.css": "/antique-app/static/css/main.3911118a.css",
+    "main.js": "/antique-app/static/js/main.6a8e3cb9.js",
     "static/js/453.bf9c6768.chunk.js": "/antique-app/static/js/453.bf9c6768.chunk.js",
     "index.html": "/antique-app/index.html",
-    "main.ecfc67da.css.map": "/antique-app/static/css/main.ecfc67da.css.map",
-    "main.4c8f3327.js.map": "/antique-app/static/js/main.4c8f3327.js.map",
+    "main.3911118a.css.map": "/antique-app/static/css/main.3911118a.css.map",
+    "main.6a8e3cb9.js.map": "/antique-app/static/js/main.6a8e3cb9.js.map",
     "453.bf9c6768.chunk.js.map": "/antique-app/static/js/453.bf9c6768.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ecfc67da.css",
-    "static/js/main.4c8f3327.js"
+    "static/css/main.3911118a.css",
+    "static/js/main.6a8e3cb9.js"
   ]
 }
